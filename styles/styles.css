@@ -1,0 +1,481 @@
+/*Responsive declarations*/
+@media only screen and (min-device-width:320px) {
+  body { font-size: 19px; }
+  h1 { font-size: 24px; }
+  .header {font: 400 40px/1.5 'Pacifico', Helvetica, sans-serif;}
+  .heading {font-size: 18px;}
+}
+@media only screen and (min-device-width:768px) {
+  body { font-size: 19px; }
+  h1 { font-size: 26px; }
+  .header {font: 400 50px/1.5 'Pacifico', Helvetica, sans-serif;}
+  .heading {font-size: 20px;}
+}
+@media only screen and (min-device-width:1024px) {
+  body { font-size:21px; }
+  h1 { font-size: 28px; }
+  .header {font: 400 60px/1.5 'Pacifico', Helvetica, sans-serif;}
+  .heading {font-size: 22px;}
+}
+
+/*page layout*/
+.mainApp {
+  width: 100%;
+  height: 100%;
+  background-image: url('http://images.ali213.net/picfile/pic/2015/04/28/2015042892014939.jpg');
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 40s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+    margin: 20px;
+}
+
+/*setup if more column classes are added in grid layout*/
+[class*="col"] {
+    float: left;
+    padding: 15px;
+}
+.col {width: 100%;}
+
+.header {
+    background-image: linear-gradient(to bottom, #494949, #128aad, #107896, #107896);
+    color: floralwhite;
+    padding: 15px;
+    display: block;    
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.heading {
+  display: block;
+  font-weight: bold;
+  margin-top: 20px;
+  font: 400 48px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+
+.heading span {
+  color: beige;
+}
+
+/*main and product sections*/
+.productTableContainer {
+  overflow-x:auto;
+  width: 100%;
+}
+
+.productTable {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.productTable th, td {
+   text-align: center;
+   vertical-align: middle;   
+   height: 50px;
+   margin: 0.5% 0 0 0.5%;
+}
+
+.productTable td {
+  padding: 10px 0 0 0;
+}
+
+.productTable th {
+  font-weight: bold;
+  background-color: #107896;
+  color: white;  
+  border-bottom: 1px solid #ddd;
+}
+
+.productTable tr:hover {
+  background-color: #D3D3D3
+}
+
+.product {
+  display: inline-block;
+}
+
+.productImage {
+  width: 100px;
+  height: 100px;
+  margin-left: 25%;
+  display: block;
+}
+
+.disableProduct {
+  pointer-events: none;
+}
+
+.disableProduct img {
+  opacity: 0.4;
+}
+
+.enableProduct {
+  pointer-events: auto;
+}
+
+.enableProduct img {
+  opacity: 1;
+}
+
+/*cart sections*/
+.row > a > div {
+  width: 45px;
+  height: 45px;
+}
+
+.row > a img {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;  
+}
+
+.row > a img:hover {
+  width: 45px;
+  height: 45px;
+}
+
+.row > a img:active {
+  box-shadow: 2px 2px 2px 0px grey;
+  transform: translateY(1px);
+}
+
+.itemAppear td {
+  animation: flipIn 0.5s
+}
+
+.itemDissappear td {
+  animation: flipOut 0.5s
+}
+
+@keyframes flipIn {
+  from {
+    opacity: 0; 
+    transform: rotateX(-90deg); 
+    transition: all 0.3s ease-in;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@keyframes flipOut {
+  from {
+    opacity: 0; 
+    transform: rotateX(90deg); 
+    transition: all 0.3s ease-in;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    transition: all 0.3s ease-in;
+  }
+}
+
+.productThumbnail {
+  width: 25px;
+  height: 25px;
+  margin-left: 50px;
+  position: absolute;
+}
+
+.removeProduct {
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  cursor: pointer;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:#962e10;
+  border-radius:100%;
+  background: linear-gradient(0deg, transparent 0%, transparent 46%, white 46%, white 56%, transparent 56%, transparent 100%);
+  background-color:#962e10;
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.removeProduct:hover {
+  transform: scale(1.6, 1.6);
+}
+
+.removeProduct:active {
+  box-shadow: 0 2px grey;
+  transform: translateY(1px);
+}
+
+.totalLabel {
+  font-weight: bold;
+}
+
+.quantityButtonsContainer {  
+  padding-left: 35px;
+}
+
+.quantityAddButton {
+  position: absolute;
+  cursor: pointer;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:#962e10;
+  border-radius:100%;
+  background: linear-gradient(0deg, transparent 0%, transparent 46%, white 46%, white 56%, transparent 56%, transparent 100%), 
+    linear-gradient(90deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  background-color:#962e10;
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-top: 2px;
+}
+
+.quantityAddButton:hover {
+  transform: scale(1.6, 1.6);
+}
+
+.quantityAddButton:active {
+  box-shadow: 0 2px grey;
+  transform: translateY(1px);
+}
+
+.quantitySubtractButton {
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  cursor: pointer;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:#962e10;
+  border-radius:100%;
+  background: linear-gradient(0deg, transparent 0%, transparent 46%, white 46%, white 56%, transparent 56%, transparent 100%);
+  background-color:#962e10;
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-top: 2px;
+}
+
+.quantitySubtractButtonDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+  cursor: pointer;
+  box-sizing:border-box;
+  width:20px;
+  height:20px;
+  border-width:3px;
+  border-style: solid;
+  border-color:#962e10;
+  border-radius:100%;
+  background: linear-gradient(0deg, transparent 0%, transparent 46%, white 46%, white 56%, transparent 56%, transparent 100%);
+  background-color:#962e10;
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  padding: 5px;
+  margin-top: 2px;
+}
+
+.quantitySubtractButton:hover {
+  transform: scale(1.6, 1.6);
+}
+
+.quantitySubtractButton:active {
+  box-shadow: 0 2px grey;
+  transform: translateY(1px);
+}
+
+/* Product cards */
+.productContainer {
+  margin-left: 10%;
+}
+
+.productCardActive {
+  opacity: 1;
+  pointer-events: auto;
+  float: left;
+  width: 305px;
+  margin: 50px 50px 0 14px;
+  background: #f8f8f8;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.productCardInactive {
+  pointer-events: none;
+  opacity: 0.4;
+  float: left;
+  width: 305px;
+  margin: 50px 14px 0 14px;
+  background: #f8f8f8;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
+  -webkit-box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.productCardActive:hover {
+  margin-top: 0;
+  background: #628842;
+  background-image: linear-gradient(to left, #283048 , #859398);
+}
+
+.productCardActive:hover .productCardOrder a {
+  text-decoration: none;
+  -moz-box-shadow: 0 -5px 10px 0 rgba(0,0,0,.2) inset;
+  -webkit-box-shadow: 0 -5px 10px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 -5px 10px 0 rgba(0,0,0,.2) inset;
+  background-image: linear-gradient(to bottom, #78AB46, #66CD00, #458B00, #4A7023);
+}
+
+.productCardActive:hover .multilineEllipsis:after {
+  background: #283048
+}
+
+.productCardActive:active .productCardOrder a {
+  -moz-box-shadow: 0 3px 8px 0 rgba(0,0,0,.2) inset;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,.2) inset;
+}
+
+.productCardActive strong { 
+  font-weight: 700; color: #3d3d3d; 
+}
+
+.productCardHeader {
+  padding: 30px 0 25px 0;
+  background: #3d3d3d;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-image: linear-gradient(to bottom, #494949, #128aad, #107896, #107896);
+}
+
+.productCardHeader h2 { 
+  font-size: 30px; 
+  font-weight: 700; 
+  text-shadow: 0 -2px 0 rgba(0,0,0,.25); 
+  color: white;
+  text-align: center;
+}
+.productCardHeader h3 { 
+  margin-top: 20px; 
+  font-size: 24px; 
+  font-weight: 400; 
+  text-shadow: 0 -2px 0 rgba(0,0,0,.25);
+  color: wheat;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.productCardSpace { 
+  height: 10px; 
+}
+
+.productCardFeatures {
+  margin: 15px 30px 0 30px;
+  padding: 0 10px 15px 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  line-height: 30px;
+  font-size: 16px;
+  color: #888;
+  transition: all 0.3s ease-in-out;
+}
+
+.productCardFeatures > div {
+  margin: 10px;
+}
+
+.productCardActive:hover .productCardFeatures {
+  color: wheat;
+}
+
+.productCardOrder {
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+
+.productCardOrder a {
+  cursor: pointer;
+  display: inline-block;
+  width: 180px;
+  height: 40px;
+  background: #3d3d3d;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-image: linear-gradient(to bottom, #ab573f, #a04227, #962e10, #962e10);
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+  margin-left: 20%;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 -2px 0 rgba(0,0,0,.25);
+  -o-transition: all .2s;
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  -ms-transition: all .2s;
+}
+
+.multilineEllipsis {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 3.6em; 
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.multilineEllipsis:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.multilineEllipsis:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: #f8f8f8;
+}
