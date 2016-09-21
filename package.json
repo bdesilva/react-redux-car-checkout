@@ -10,7 +10,6 @@
   "author": "Benjamin De Silva",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.15.0",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
     "react-bootstrap": "^0.30.3",

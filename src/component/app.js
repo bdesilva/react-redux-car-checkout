@@ -1,6 +1,6 @@
 import React from 'react';
 import Cart from './cart';
-import Products from './products';
+import Garage from './garage';
 import styles from '../../styles/styles.css';
 
 export default () => (
@@ -14,7 +14,7 @@ export default () => (
           <Cart/>
         </div>
         <div className={styles.row}>
-          <Products/>
+          <Garage/>
         </div>
       </div>
     </div>
