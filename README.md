@@ -1,5 +1,5 @@
 # react-redux-car-checkout
-A car checkout site written in React with Redux as a React/Redux playground.
+A car checkout site using React with Redux.
 
 Please note that this site is a sandbox for React and Redux and I'm constantly adding improvements and testing different features in this site.
 
