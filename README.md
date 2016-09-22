@@ -12,5 +12,5 @@ Ben's Garage - 2:
 
 
 ##Instructions:
-1. Clone git repository and run ```gulp``` to start webpack dev server.
+1. Clone git repository and run ```npm install``` and ```gulp``` to start webpack dev server.
 2. Navigate to ```http://localhost:4000/public/``` in order to start the site.
